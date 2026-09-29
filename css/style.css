@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto Mono", monospace, sans-serif;
   font-size: 120%;
@@ -111,7 +115,8 @@ section.flex {
 
 .service {
   text-align: center;
-  padding: 25px 10px;
+  padding: 10px 10px;
+  margin: 10px;
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
@@ -120,6 +125,21 @@ section.flex {
     transform 0.5s,
     background 0.5s;
 }
+
+.service:hover {
+  background: #fff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.service:hover i {
+  color: #000;
+}
+
+.service:hover h2 {
+  color: #858484;
+}
+
 /* Font Awesome icons */
 .service i {
   font-size: 40px;
@@ -198,12 +218,12 @@ section.grid-gallery {
   grid-row: span 2;
 }
 
-/* .contact {
+.contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: left;
-} */
+}
 
 .contact {
   text-align: center;
@@ -229,6 +249,15 @@ section.grid-gallery {
   }
   .intro {
     grid-template-columns: 1fr;
+  }
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
